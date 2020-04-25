@@ -1,4 +1,3 @@
-# plot
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,12 +6,13 @@ from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
 def get_price_vol_daily(csv_p):
-	''' load price & volume from csv file
-		input :
-			csv_p: the path of csv
+	''' 
+		function: load price & volume from csv file
+			input :
+				csv_p: the path of csv
 
-		output:
-			Closes, Opens, Lowes, Highes, Volumes, Dates: type is list(1d)
+			output:
+				Closes, Opens, Lowes, Highes, Volumes, Dates: type is list(1d)
 	'''
 	Dates, Opens, Closes, Lowes, Highes, Volumes = [], [], [], [], [], []
 	Open_last, High_last, Low_last, Close_last, Volume_last = 0, 0, 0, 0, 0
@@ -38,14 +38,15 @@ def get_price_vol_daily(csv_p):
 def plot(x, y, start_date, x_axis_interval=200):
 	# https://blog.csdn.net/funnyPython/article/details/83925573?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
 
-	''' plot a 2d(x,y) curve
-		input :
-			x: the date, from earliest date in hostorical data, shape is (num of date, )
-			y: the price, shape is (num of date, num of price curve)
-			start_date: the earliest date
+	''' 
+		function: plot a 2d(x,y) curve
+			input :
+				x: the date, from earliest date in hostorical data, shape is (num of date, )
+				y: the price, shape is (num of date, num of price curve)
+				start_date: the earliest date
 
-		output:
-			2d curve
+			output:
+				2d curve
 	'''
 	# the param of plot
 	mpl.rcParams['lines.linewidth'] = 1
